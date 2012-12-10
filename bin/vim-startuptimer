@@ -8,13 +8,15 @@ require 'optparse'
 # default values
 vim = "vim"
 result = "vim-startuptime"
+parallel = 4
 
 opt = OptionParser.new
 
 # define options
 opt.on('--vim VIM'){|v| vim = v}
 opt.on('--result RESULT'){|r| result = r}
+opt.on('--paralell'){|p| parallel = p}
 
 opt.parse!(ARGV)
 
-runner = VimStartuptimer::Runner.new vim
+runner = VimStartuptimer::Runner.new vim,result,parallel
