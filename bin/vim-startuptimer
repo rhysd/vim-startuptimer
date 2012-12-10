@@ -20,3 +20,4 @@ opt.on('--paralell'){|p| parallel = p}
 opt.parse!(ARGV)
 
 runner = VimStartuptimer::Runner.new vim,result,parallel
+runner.start
